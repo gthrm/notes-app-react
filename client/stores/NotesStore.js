@@ -28,15 +28,15 @@ const TasksStore = Object.assign({}, EventEmitter.prototype, {
         return _notes
     },
 
-    emitChange() {
+    emitChange: function() {
         this.emit(CHANGE_EVENT)
     },
 
-    addChangeListener(callback) {
+    addChangeListener: function(callback) {
         this.on(CHANGE_EVENT, callback)
     },
 
-    removeChangeListener(callback) {
+    removeChangeListener: function(callback) {
         this.removeListener(CHANGE_EVENT, callback)
     }
 })
@@ -68,6 +68,7 @@ AppDispatcher.register(function(action) {
 
         default: {
             console.log('No such handler')
+            console.log('---', action)
         }
     }
 })

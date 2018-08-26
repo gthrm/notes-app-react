@@ -3,8 +3,9 @@ import Constants from '../constants/AppConstants'
 
 import api from '../api'
 
-const NotesActions = {
+const NoteActions = {
     loadNotes() {
+        console.log('loadNotes')
         AppDispatcher.dispatch({
             type: Constants.LOAD_NOTES_REQUEST
         })
@@ -12,20 +13,20 @@ const NotesActions = {
         api.listNotes()
         .then(({ data }) => 
             AppDispatcher.dispatch({
-                type: Constants.LOAD_NOTES_SUCCES,
+                type: Constants.LOAD_NOTES_SUCCESS,
                 notes: data
             })
         )
         .catch(err =>
             AppDispatcher.dispatch({
                 type: Constants.LOAD_NOTES_FAIL,
-                error: err
-                
+                error: err  
             })
         )
     },
 
     createNote(note) {
+        console.log('createNote', note)
         api.createNote(note)
             .then(() => 
             this.loadNotes()
@@ -36,6 +37,7 @@ const NotesActions = {
     },
 
     deleteNote(noteId) {
+        console.log('deleteNote noteId', noteId)
         api.deleteNote(noteId)
         .then(() =>
             this.loadNotes()
@@ -46,4 +48,4 @@ const NotesActions = {
     }
 }
 
-export default NotesActions
+export default NoteActions

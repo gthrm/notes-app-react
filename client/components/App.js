@@ -1,7 +1,7 @@
 import React from 'react'
 
-import NotesActions from '../actions/NotesActions'
-import NotesStore from '../stores/NotesStore'
+import NotesStore from '../stores/NotesStore.js'
+import NotesActions from '../actions/NotesActions.js'
 
 import NoteEditor from './NoteEditor.js'
 import NotesGrid from './NotesGrid.js'
@@ -16,7 +16,6 @@ function getStateFromFlux() {
 }
 
 const App = React.createClass({
-
     getInitialState() {
         return getStateFromFlux()
     },
@@ -40,7 +39,7 @@ const App = React.createClass({
 
     handleNoteDelete(note) {
         console.log(note)
-        NotesActions.createNote(note.id)
+        NotesActions.deleteNote(note.id)
     },
 
     render() {

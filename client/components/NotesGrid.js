@@ -13,6 +13,7 @@ const NotesGrid = React.createClass({
             gutter: 10,
             isFitWidth: true
         }
+
         return (
             <Masonry
                 className="NotesGrid"
@@ -23,7 +24,7 @@ const NotesGrid = React.createClass({
                         <Note
                             key={note.id}
                             title={note.title}
-                            onDelete={this.props.onDelete.bind(null, note)}
+                            onDelete={this.props.onNoteDelete.bind(null, note)}
                             color={note.color}
                         >
                             {note.text}
