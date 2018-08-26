@@ -18,20 +18,22 @@
   },
   "homepage": "https://github.com/gthrm/notes-app-react#readme",
   "dependencies": {
+    "@types/axios": "^0.14.0",
     "axios": "^0.9.1",
     "body-parser": "^1.12.3",
     "classnames": "^2.2.3",
     "cors": "*",
-    "events": "^1.1.0",
+    "events": "^1.1.1",
     "express": "*",
     "flux": "^2.1.1",
     "jquery": "*",
     "keymirror": "^0.1.1",
     "less": "^2.6.0",
     "mongoose": "*",
+    "nodemon": "^1.18.3",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
-    "react-masonry-component": "^4.0.0"
+    "react-masonry-component": "^4.4.0"
   },
   "devDependencies": {
     "autoprefixer-loader": "*",

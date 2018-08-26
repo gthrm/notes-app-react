@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 
 import './NoteEditor.less'
 
@@ -17,6 +17,10 @@ const NoteEditor = React.createClass({
 
     handleTitleChange(event) {
         this.setState( {title: event.target.value})
+    },
+
+    handleColorChange(color) {
+        this.setState({ color });
     },
 
     handleNoteAdd() {

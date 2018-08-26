@@ -1,30 +1,30 @@
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
 
-import '../models/notes'
+import config from '../../etc/config.json';
 
-import config from '../../etc/config.json'
+import '../models/Note';
 
-const Note = mongoose.model('Note')
+const Note = mongoose.model('Note');
 
 export function setUpConnection() {
     mongoose.connect(`mongodb://${config.db.username}:${config.db.pass}@${config.db.host}:${config.db.port}/${config.db.name}`)
-}
+};
 
-export function listNotes() {
-    return Note.find()
-}
+export function listNotes(id) {
+    return Note.find();
+};
 
 export function createNote(data) {
     const note = new Note({
-        tetle: data.title,
+        title: data.title,
         text: data.text,
         color: data.color,
         createdAt: new Date()
-    })
+    });
 
-    return note.save()
-}
+    return note.save();
+};
 
 export function deleteNote(id) {
-    return Note.findById(id).remove()
-}
+    return Note.findById(id).remove();
+};
